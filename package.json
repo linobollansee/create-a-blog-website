@@ -1,0 +1,30 @@
+{
+  "name": "create-a-blog-website",
+  "version": "1.0.0",
+  "description": "A blog website built with Express.js, TypeScript, and Nunjucks",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": [
+    "blog",
+    "express",
+    "typescript",
+    "nunjucks"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.1",
+    "@types/nunjucks": "^3.2.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
