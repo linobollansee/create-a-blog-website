@@ -418,24 +418,27 @@ nunjucks.configure("views", {
 ### Static File Serving
 
 ```typescript
-app.use(express.static("public"));
-app.use("/css", express.static("css"));
-app.use("/js", express.static("js"));
-app.use("/assets", express.static("assets"));
+app.use("/css", express.static(path.join(__dirname, "../css")));
+app.use("/js", express.static(path.join(__dirname, "../js")));
+app.use("/assets", express.static(path.join(__dirname, "../assets")));
 ```
 
 **How Static Middleware Works:**
 
 - **express.static()**: Serves files directly without processing
+- **path.join(\_\_dirname, "../folder")**: Creates absolute paths from compiled `dist/` folder
+  - `__dirname` points to `dist/` in production (after TypeScript compilation)
+  - `../css` goes up to project root, then into `css/` folder
 - Maps URL paths to filesystem directories
 - Examples:
   - `/css/styles.css` → serves `css/styles.css`
   - `/assets/img/flowers.jpg` → serves `assets/img/flowers.jpg`
   - `/js/scripts.js` → serves `js/scripts.js`
 
-**Why Multiple Entries?**
+**Why Absolute Paths?**
 
-- Explicit control over which directories are public
+- Works reliably when TypeScript compiles to `dist/` folder
+- Prevents path resolution issues in production
 - Clean URL structure matching the template expectations
 - Security: Only expose specific directories
 
