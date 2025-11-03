@@ -27,10 +27,9 @@ nunjucks.configure("views", {
 });
 
 // Serve static files
-app.use(express.static("public"));
-app.use("/css", express.static("css"));
-app.use("/js", express.static("js"));
-app.use("/assets", express.static("assets"));
+app.use("/css", express.static(path.join(__dirname, "../css")));
+app.use("/js", express.static(path.join(__dirname, "../js")));
+app.use("/assets", express.static(path.join(__dirname, "../assets")));
 
 // Read blog posts
 const blogPosts: BlogPost[] = JSON.parse(
