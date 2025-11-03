@@ -15,7 +15,6 @@
     - Display the full content and the provided image (hint: you need a slug)
 - Try to use macros for the form to avoid to repeat yourself too often.
 - It's ok if the form on the contact page is just HTML. No need to implement any validation for this case.
-- Try to use macros instead of label input.
 
 ## Material
 
