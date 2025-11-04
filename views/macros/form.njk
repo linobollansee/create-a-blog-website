@@ -1,34 +1,34 @@
 {% macro formField(name, label, type="text", required=false) %}
-<div class="form-floating mb-3">
-  {% if type == "textarea" %}
-  <textarea
-    class="form-control"
-    id="{{ name }}"
-    name="{{ name }}"
-    placeholder="Enter your {{ label | lower }}..."
-    style="height: 12rem"
-    {%
-    if
-    required
-    %}required{%
-    endif
-    %}
-  ></textarea>
-  {% else %}
-  <input
-    class="form-control"
-    id="{{ name }}"
-    name="{{ name }}"
-    type="{{ type }}"
-    placeholder="Enter your {{ label | lower }}..."
-    {%
-    if
-    required
-    %}required{%
-    endif
-    %}
-  />
-  {% endif %}
-  <label for="{{ name }}">{{ label }}</label>
-</div>
+  <div class="form-floating mb-3">
+    {% if type == "textarea" %}
+      <textarea
+        class="form-control"
+        id="{{ name }}"
+        name="{{ name }}"
+        placeholder="Enter your {{ label | lower }}..."
+        style="height: 12rem"
+        {%
+          if
+          required
+        %}
+          required
+        {% endif %}
+      ></textarea>
+    {% else %}
+      <input
+        class="form-control"
+        id="{{ name }}"
+        name="{{ name }}"
+        type="{{ type }}"
+        placeholder="Enter your {{ label | lower }}..."
+        {%
+          if
+          required
+        %}
+          required
+        {% endif %}
+      />
+    {% endif %}
+    <label for="{{ name }}">{{ label }}</label>
+  </div>
 {% endmacro %}
