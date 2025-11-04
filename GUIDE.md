@@ -196,6 +196,34 @@ npm install --save-dev @types/express@^5.0.0 @types/node@^22.9.1 @types/nunjucks
 - This prevents breaking changes while allowing bug fixes and minor updates
 - Lock file (`package-lock.json`) ensures consistent installs across environments
 
+**2.5 Updating Dependencies**
+
+To update all dependencies to their latest compatible versions:
+
+```bash
+npm update
+```
+
+To check which packages have available updates:
+
+```bash
+npm outdated
+```
+
+To update to the latest major versions (breaking changes possible):
+
+```bash
+npx npm-check-updates -u
+npm install
+```
+
+**Best Practice:**
+
+- Run `npm outdated` regularly to check for updates
+- Review changelogs before major version updates
+- Test thoroughly after updating dependencies
+- Commit `package-lock.json` to ensure consistent versions across environments
+
 ---
 
 ## Configuration Files Explained
